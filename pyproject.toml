@@ -32,6 +32,12 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 
+[project.optional-dependencies]
+# This defines the extras group:
+completion = [
+    "shtab>=1.6",
+]
+
 [project.urls]
 "Homepage" = "https://github.com/dspinellis/alexandria3k"
 "Repository" = "https://github.com/dspinellis/alexandria3k.git"
