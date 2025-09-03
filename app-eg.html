@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Application examples &#8212; alexandria3k 3.6.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=5349f462"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Schema diagrams" href="schema.html" />
+    <link rel="prev" title="Python API examples" href="python-eg.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="application-examples">
+<h1>Application examples<a class="headerlink" href="#application-examples" title="Link to this heading">¶</a></h1>
+<p>The source distribution <code class="docutils literal notranslate"><span class="pre">examples</span></code> directory contains proof-of-concept
+studies that were conducted with <em>alexandria3k</em> as examples of its use.</p>
+<p>They are structured to use Makefiles based on
+<a class="reference external" href="https://github.com/dspinellis/simple-rolap">simple-rolap</a> for
+orchestrating the queries (it is installed automatically) and
+<a class="reference external" href="https://github.com/dspinellis/rdbunit">rdbunit</a> for unit testing
+them (it needs to be manually installed for running the tests). Running
+(GNU) <code class="docutils literal notranslate"><span class="pre">make</span></code> in a directory will produce the expected results in a
+<code class="docutils literal notranslate"><span class="pre">reports</span></code> sub-directory. Many of the studies can take hours or days to
+run. When running the scripts on a shared Unix/Linux computer, running
+<em>make</em> as <code class="docutils literal notranslate"><span class="pre">nohup</span> <span class="pre">nice</span> <span class="pre">make</span></code> will log the operation in the file
+<code class="docutils literal notranslate"><span class="pre">nohup.out</span></code> (use <code class="docutils literal notranslate"><span class="pre">tail</span> <span class="pre">-f</span> <span class="pre">nohup.out</span></code> to view it), prevent the
+command from terminating when a session is disconnected, and decrease
+the priority of the tasks to minimize their burden on interactive users.
+When modifying existing studies or creating one ones, run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">help</span></code>
+in a study directory to see some potentially useful <em>make</em> targets.</p>
+<p>The
+<a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/common">common</a>
+directory contains Makefile rules for satisfying data dependencies
+common to more than one study. It also hosts downloaded data sets to
+minimize useless replication. The <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> residing in it can be
+used to tailor the running of all other studies.</p>
+<section id="examples-by-directory">
+<h2>Examples by directory<a class="headerlink" href="#examples-by-directory" title="Link to this heading">¶</a></h2>
+<p>The following examples are available.</p>
+<section id="templates">
+<h3>Templates<a class="headerlink" href="#templates" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/authors-by-decade">“Hello world” example: number of authors by
+decade</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/sample">Fully-indexed Crossref database
+sample</a></p></li>
+</ul>
+</section>
+<section id="studies">
+<h3>Studies<a class="headerlink" href="#studies" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/research-synthesis">Tally number of research synthesis
+studies</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/graph">Generate and study the entities’ graph
+structure</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/covid">Obtain data associated with COVID-19
+research</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/yearly-numpages">Calculate the average size of an article’s pages each
+year</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/cdindex">Calculate the works’ CD-5 index using the Python API or a
+pre-populated
+database</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/tawfik">Investigate the CD-5 index of Dan Tawfik’s
+works</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/uspto">Top five US Patent Office applications by country and
+year</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/pubmed-software">Replication study on software used in PubMed
+articles</a></p></li>
+</ul>
+</section>
+<section id="data-source-examples-and-metric-measurements">
+<h3>Data source examples and metric measurements<a class="headerlink" href="#data-source-examples-and-metric-measurements" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/crossref-standalone">Report metrics associated with the Crossref data
+set</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/orcid">Report metrics associated with ORCID
+data</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/datacite">Report metrics associated with DataCite
+data</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/ror-metrics">Report research organization registry
+metrics</a></p></li>
+</ul>
+</section>
+<section id="impact-and-productivitycalculations">
+<h3>Impact and productivitycalculations<a class="headerlink" href="#impact-and-productivitycalculations" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/impact-factor-2021">Calculate the 2021 journal impact
+factor</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/journal-h5">Calculate the h5-index of
+journals</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/soft-eng-h5">Calculate the h5-index of software engineering research
+venues</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/person-h5">Calculate h5-index of persons and study their citation
+graph</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/open-access">Examine the evolution and impact of open access journal
+papers</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/author-productivity">Calculate relative yearly author
+productivity</a></p></li>
+</ul>
+</section>
+</section>
+<section id="published-results">
+<h2>Published results<a class="headerlink" href="#published-results" title="Link to this heading">¶</a></h2>
+<p>The following queries have been used to publish derived figures and
+tables.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://doi.org/10.1371/journal.pone.0294946.g001">Yearly availability of Crossref
+elements</a>
+derived from</p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/./crossref-standalone/yearly-abstracts.sql">crossref-standalone/yearly-abstracts.sql</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/./graph/yearly-work-subjects.sql">graph/yearly-work-subjects.sql</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/./graph/yearly-work-funders.sql">graph/yearly-work-funders.sql</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/./graph/yearly-work-links.sql">graph/yearly-work-links.sql</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/./graph/yearly-work-references.sql">graph/yearly-work-references.sql</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/./graph/yearly-work-authors.sql">graph/yearly-work-authors.sql</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/./graph/yearly-authors-orcid.sql">graph/yearly-authors-orcid.sql</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/./graph/yearly-author-affiliations.sql">graph/yearly-author-affiliations.sql</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/./graph/yearly-references-doi.sql">graph/yearly-references-doi.sql</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/./graph/yearly-funders-doi.sql">graph/yearly-funders-doi.sql</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/./graph/yearly-funder-awards.sql">graph/yearly-funder-awards.sql</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://doi.org/10.1371/journal.pone.0294946.t001">Number and properties of Crossref
+records</a>
+derived from <a class="reference external" href="./graph/metrics.sql">graph/metrics.sql</a></p></li>
+<li><p><a class="reference external" href="https://doi.org/10.1371/journal.pone.0294946.t002">Number of ORCID
+records</a>
+derived from <a class="reference external" href="./graph/metrics.sql">graph/metrics.sql</a></p></li>
+<li><p><a class="reference external" href="https://doi.org/10.1371/journal.pone.0294946.g002">Evolution of scientific publishing metrics in the post-WW2
+period</a> derived
+from</p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/./graph/yearly-authors-per-work.sql">graph/yearly-authors-per-work.sql</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/./author-productivity/author-productivity.sql">author-productivity/author-productivity.sql</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/./graph/yearly-works.sql">graph/yearly-works.sql</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/./open-access/yearly-oa-journal-works.sql">open-access/yearly-oa-journal-works.sql</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/./graph/yearly-citations-per-paper.sql">graph/yearly-citations-per-paper.sql</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/./graph/yearly-references-per-paper.sql">graph/yearly-references-per-paper.sql</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/./crossref-standalone/yearly-journals.sql">crossref-standalone/yearly-journals.sql</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/./yearly-numpages/yearly-numpages.sql">yearly-numpages/yearly-numpages.sql</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/./graph/yearly-proportion-of-cited-papers.sql">graph/yearly-proportion-of-cited-papers.sql</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/./graph/yearly-2y-impact-factor.sql">graph/yearly-2y-impact-factor.sql</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/./graph/yearly-20y-impact-factor.sql">graph/yearly-20y-impact-factor.sql</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/./cdindex/yearly-cdindex.sql">cdindex/yearly-cdindex.sql</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://doi.org/10.1371/journal.pone.0294946.g003">Number of research synthesis studies published each year in the
+period
+1971–2021</a>
+derived from
+<a class="reference external" href="./research-synthesis/a3k-queries/research-synthesis.sql">research-synthesis/a3k-queries/research-synthesis.sql</a></p></li>
+<li><p><a class="reference external" href="https://doi.org/10.1371/journal.pone.0294946.g004">Evolution of subject coverage and publications
+1945–2021</a>
+derived from
+<a class="reference external" href="./graph/general-field-publications-list.sql">graph/general-field-publications-list.sql</a></p></li>
+<li><p><a class="reference external" href="https://doi.org/10.1371/journal.pone.0294946.g005">Citations from COVID research to COVID research over
+time</a> derived
+from <a class="reference external" href="./covid/inner-citations.sql">covid/inner-citations.sql</a></p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">alexandria3k</a></h1>
+
+
+
+<p class="blurb">Local relational access to openly-available publication data sets</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=dspinellis&repo=alexandria3k&type=star&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="downloading.html">Data downloading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="use.html">Use overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli-eg.html">Command line examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-eg.html">Python API examples</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Application examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#examples-by-directory">Examples by directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#published-results">Published results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="schema.html">Schema diagrams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command line interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html#shell-completion">Shell completion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-api.html">Python user API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugin-api.html">Python plugin API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utility-api.html">Python utility API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html">Development processes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-plugin.html">Plugin development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ: Frequently asked questions</a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="None">Version: 3.6.0</a></li>
+    
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="python-eg.html" title="previous chapter">Python API examples</a></li>
+      <li>Next: <a href="schema.html" title="next chapter">Schema diagrams</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2022-2025, Diomidis Spinellis.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/app-eg.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

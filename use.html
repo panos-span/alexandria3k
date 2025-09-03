@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Use overview &#8212; alexandria3k 3.6.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=5349f462"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Command line examples" href="cli-eg.html" />
+    <link rel="prev" title="Data downloading" href="downloading.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="use-overview">
+<h1>Use overview<a class="headerlink" href="#use-overview" title="Link to this heading">¶</a></h1>
+<p>After downloading the Crossref data you can use <em>alexandria3k</em> through
+its Python API or as a command-line tool.</p>
+<p>With <em>alexandria3k</em> you can process diverse sources of bibliographic
+data, such as Crossref, ORCID, USPTO, DOAJ, and ROR.
+Specifically, you can perform the following actions.</p>
+<ul class="simple">
+<li><p>Directly run ad hoc SQL queries on any of the supported data sets.</p></li>
+<li><p>Populate SQLite databases with selected elements of the supported
+data sets.</p>
+<ul>
+<li><p>Select a horizontal subset of a data set’s records.</p>
+<ul>
+<li><p>Through an SQL expression.</p></li>
+<li><p>By sampling a subset of the data set’s elements or containers.
+(For example sampling some of the 26 thousand containers in the
+Crossref data set.)</p></li>
+</ul>
+</li>
+<li><p>Select a horizontal subset of a data set’s records by only loading
+those associated with already populated records or records available
+in another database.</p></li>
+<li><p>Select a vertical subset of a data set’s columns</p>
+<ul>
+<li><p>Using the <code class="docutils literal notranslate"><span class="pre">Table.Column</span></code> or <code class="docutils literal notranslate"><span class="pre">Table.*</span></code> notation</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Process already populated databases to cross-link or normalize their
+elements.</p></li>
+</ul>
+<p>Populating a database can take minutes (for a small, e.g. experimental,
+subset), a few hours (to traverse the whole Crossref data set and obtain
+a few thousands of records), or a couple of days (to produce a large
+set, e.g. by selecting some columns).</p>
+<p>After your populate an SQLite database and create suitable indexes, SQL
+queries often run in seconds.</p>
+<p>You can find many complete proof-of-concept example studies
+conducted with command-line invocations in the
+<a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples">examples</a>
+directory. Consider using the
+<a class="reference external" href="https://github.com/dspinellis/alexandria3k/tree/main/examples/authors-by-decade">hello world</a> (work authors by decade) example as a starting point.</p>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">alexandria3k</a></h1>
+
+
+
+<p class="blurb">Local relational access to openly-available publication data sets</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=dspinellis&repo=alexandria3k&type=star&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="downloading.html">Data downloading</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Use overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli-eg.html">Command line examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-eg.html">Python API examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="app-eg.html">Application examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schema.html">Schema diagrams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command line interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html#shell-completion">Shell completion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user-api.html">Python user API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugin-api.html">Python plugin API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utility-api.html">Python utility API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev.html">Development processes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dev-plugin.html">Plugin development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ: Frequently asked questions</a></li>
+</ul>
+
+
+<hr />
+<ul>
+    
+    <li class="toctree-l1"><a href="None">Version: 3.6.0</a></li>
+    
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="downloading.html" title="previous chapter">Data downloading</a></li>
+      <li>Next: <a href="cli-eg.html" title="next chapter">Command line examples</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2022-2025, Diomidis Spinellis.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/use.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
