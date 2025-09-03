@@ -1,7 +1,6 @@
-#!/usr/bin/env python3
 #
 # Alexandria3k Crossref bibliographic metadata processing
-# Copyright (C) 2022  Diomidis Spinellis
+# Copyright (C) 2025 Panagiotis-Alexios Spanakis
 # SPDX-License-Identifier: GPL-3.0-or-later
 #
 # This program is free software: you can redistribute it and/or modify
@@ -50,7 +49,7 @@ class _MissingCompletionAction(argparse.Action):
         parser.exit(1)
 
 
-def _iter_subparsers(root_parser):
+def _iter_subparsers(root_parser: argparse.ArgumentParser):
     """Yield (name, parser) for each subparser in *root_parser*.
 
     Accesses protected attributes of argparse objects; this is intentional
