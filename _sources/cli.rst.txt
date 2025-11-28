@@ -28,7 +28,11 @@ implemented in :mod:`alexandria3k.completion` via the optional dependency
 Enabling
 ~~~~~~~~
 
-Install with the extra (recommended):
+Shell completion is provided by the `shtab <https://pypi.org/project/shtab/>`_
+package.  This is installed automatically on non-Windows systems.
+On Windows, or if it is missing, you can install it manually.
+
+Install with the extra (which simply installs ``shtab``):
 
 .. code-block:: bash
 
