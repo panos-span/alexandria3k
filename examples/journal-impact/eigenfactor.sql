@@ -9,6 +9,3 @@ CREATE TABLE IF NOT EXISTS rolap.eigenfactor (
   journal_id INTEGER PRIMARY KEY,
   eigenfactor_score REAL
 );
-
--- Create index on the score for analysis/sorting
-CREATE INDEX IF NOT EXISTS rolap.eigenfactor_score_idx ON eigenfactor(eigenfactor_score);
