@@ -49,6 +49,10 @@ tables/context_impact: tables/bibliographic_coupling tables/publications3 tables
 tables/journal_communities: tables/context_impact
 	touch $@
 
+tables/cluster_labels: tables/journal_communities tables/journal_names tables/network_centrality tables/prestige_rank tables/context_impact cluster_labels.py
+	./cluster_labels.py --db "$(MAINDB).db" --rolap-db "$(ROLAPDB).db"
+	touch $@
+
 # journal_names is populated into the main DB by the journal-names prerequisite
 tables/journal_names: journal-names
 	touch $@
