@@ -1,4 +1,4 @@
-#!/mnt/c/Users/panagiotis/Desktop/GitHub/alexandria3k/examples/journal-impact/.venv/bin/python3
+#!/usr/bin/env python3
 #
 # Alexandria3k Crossref bibliographic metadata processing
 # Copyright (C) 2026  Panagiotis Spanakis
